@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3x3 Matrix Calculator</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Matrix Calculator</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <div class="container">
-    <h1> Matrix Calculator</h1>
-
-    <div class="matrix-inputs">
-      <h2>Matrix A</h2>
-      <input type="number" id="a11" placeholder="A11">
-      <input type="number" id="a12" placeholder="A12">
-      <input type="number" id="a13" placeholder="A13">
-      <br>
-      <input type="number" id="a21" placeholder="A21">
-      <input type="number" id="a22" placeholder="A22">
-      <input type="number" id="a23" placeholder="A23">
-      <br>
-      <input type="number" id="a31" placeholder="A31">
-      <input type="number" id="a32" placeholder="A32">
-      <input type="number" id="a33" placeholder="A33">
+    <section id="banner">
+    <p>Matrix Calculator<hr></p>
+    <div id="upper">
+        <div id="matrix1" class="parent">
+            <h1 class="title">Matrix A</h1>
+            <input type="number" class="m1r1" value="0"/>
+            <input type="number" class="m1r1" value="0"/>
+            <input type="number" class="m1r1" value="0"/>
+            <input type="number" class="m1r2" value="0"/>
+            <input type="number" class="m1r2" value="0"/>
+            <input type="number" class="m1r2" value="0"/>
+            <input type="number" class="m1r3" value="0"/>
+            <input type="number" class="m1r3" value="0"/>
+            <input type="number" class="m1r3" value="0"/>
+          
+            <div class="functions">
+                <!-- <input type="button" class="function" value="Determinant(A)" onclick="mc.calDeterminantA()"/>
+                <input type="button" class="function" value="Transpose(A)" onclick="mc.transposeMatrixA()"/>
+                <input type="button" class="function" value="Rank(A)" onclick="mc.calRankA()"/>
+                
+                 -->
+            </div>
+        </div>
+        <div id="operations">
+            <input class="operation" type="button" value="A + B" onclick="mc.addMatrix()"/>
+            <input class="operation" type="button" value="A - B" onclick="mc.subtractMatrix()"/>
+            <input class="operation" type="button" value="A &times B" onclick="mc.multiplyMatrix()"/>
+            <input type="button" class="operation" value="Clear" onclick="mc.clear()"/>
+        </div>
+        <div id="matrix2" class="parent">
+             <h1 class="title">Matrix B</h1>
+             <input type="number" class="m2r1" value="0"/>
+             <input type="number" class="m2r1" value="0"/>
+             <input type="number" class="m2r1" value="0"/>
+             <input type="number" class="m2r2" value="0"/>
+             <input type="number" class="m2r2" value="0"/>
+             <input type="number" class="m2r2" value="0"/>
+             <input type="number" class="m2r3" value="0"/>
+             <input type="number" class="m2r3" value="0"/>
+             <input type="number" class="m2r3" value="0"/>
+          
+             <div class="functions">
+                <!-- <input type="button" class="function" value="Determinant(B)" onclick="mc.calDeterminantB()"/>
+                <input type="button" class="function" value="Transpose(B)" onclick="mc.transposeMatrixB()"/>
+                <input type="button" class="function" value="Rank(B)" onclick="mc.calRankB()"/>
+                 -->
+                
+            </div>
+        </div>
     </div>
-
-    <div class="matrix-inputs">
-      <h2>Matrix B</h2>
-      <input type="number" id="b11" placeholder="B11">
-      <input type="number" id="b12" placeholder="B12">
-      <input type="number" id="b13" placeholder="B13">
-      <br>
-      <input type="number" id="b21" placeholder="B21">
-      <input type="number" id="b22" placeholder="B22">
-      <input type="number" id="b23" placeholder="B23">
-      <br>
-      <input type="number" id="b31" placeholder="B31">
-      <input type="number" id="b32" placeholder="B32">
-      <input type="number" id="b33" placeholder="B33">
+    <br>
+    <div id="lower">
+        
+        <textarea wrap="soft" id="console" cols="10" rows="10" disabled>Result:</textarea>
     </div>
-
-    <div class="buttons">
-      <button onclick="addMatrices()">Add</button>
-      <button onclick="subtractMatrices()">Subtract</button>
-    </div>
-
-    <h2>Result</h2>
-    <div id="result">
-    </div>
-  </div>
-
-  <script src="app.js"></script>
+   
+</section>
 </body>
 </html>
